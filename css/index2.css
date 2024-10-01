@@ -14,12 +14,15 @@ body, html {
     display: flex;
     width: 400vw; /* Four sections, 100vw each */
     height: 100vh;
-    transition: transform 1s ease-in-out; /* Smooth transition */
+    overflow-x: auto; /* Enable horizontal scroll */
+    scroll-snap-type: x mandatory; /* Snap to sections on scroll */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
 }
 
 .section {
     width: 100vw;
     height: 100vh;
+    scroll-snap-align: start; /* Snap to the start of each section */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,11 +31,8 @@ body, html {
     background: #f0f0f0;
     border: 1px solid #ccc;
     transition: background 3s, transform 3s;
-    -webkit-transition: background 3s, transform 3s;
-    -moz-transition: background 3s, transform 3s;
-    -ms-transition: background 3s, transform 3s;
-    -o-transition: background 3s, transform 3s;
 }
+
 
 /* Different background colors for each section */
 #section1 {
