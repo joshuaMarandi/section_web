@@ -1,0 +1,385 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-color: #f9f9f9;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px; /* Padding to prevent overlap with header */
+}
+
+/* Section Styles */
+section {
+    min-height: 100vh;
+    padding: 60px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Background Images */
+#featured-products,
+#promotions,
+#customer-reviews,
+#contact-info,
+#social-media {
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    height: 400px; /* Set a height for the sections */
+    color: white; /* Adjust text color for readability */
+    padding: 20px; /* Padding for content */
+}
+
+/* Section Specific Backgrounds */
+/* Section Specific Backgrounds */
+#featured-products {
+    background-image: url('../img/14.jpeg');
+}
+
+#promotions {
+    background-image: url('../img/15.jpeg');
+}
+
+#customer-reviews {
+    background-image: url('../img/16.jpeg');
+}
+
+#contact-info {
+    background-image: url('../img/68.jpeg');
+}
+
+#social-media {
+    background-image: url('../img/89.jpeg');
+}
+
+/* Common styles for sections */
+#featured-products,
+#promotions,
+#customer-reviews,
+#contact-info,
+#social-media {
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    height: 400px; /* Set a height for the sections */
+    color: white; /* Adjust text color for readability */
+    padding: 20px; /* Padding for content */
+}
+
+
+/* Section Colors */
+section:nth-child(odd) {
+    background-color: #f4f4f4;
+}
+
+section:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Section Heading */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #efebeb;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+/* Text and Description */
+p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #f0ebeb;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+/* Animation for Fade-in Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section 1: Featured Products */
+#featured-products .products {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: slideIn 3s forwards;
+    -webkit-animation: slideIn 3s forwards;
+}
+
+.product {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    width: 250px;
+    text-align: center;
+}
+
+.product:hover {
+    transform: translateY(-15px);
+    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); */
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.product h3 {
+    margin: 15px 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.product p {
+    font-size: 1rem;
+    /* color: #777; */
+}
+
+.product button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.product button:hover {
+    background-color: #0056b3;
+}
+
+/* Animation for Sliding Products */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Section 2: Promotions and Discounts */
+#promotions .promotions-banners {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.banner {
+    background-color: #ffda79;
+    padding: 40px;
+    border-radius: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.banner h2 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.banner button {
+    margin-top: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.banner button:hover {
+    background-color: #218838;
+}
+
+/* Section 3: Customer Reviews */
+#customer-reviews .review-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: scroll;
+    padding: 20px 0;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.review {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.review p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.review .stars {
+    color: gold;
+    font-size: 1.5rem;
+}
+
+/* Section 4: Contact Information */
+#contact-info form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: auto;
+    opacity: 0;
+    animation: fadeIn 2.5s forwards;
+}
+
+#contact-info input,
+#contact-info textarea {
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+#contact-info input:focus,
+#contact-info textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+#contact-info button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#contact-info button:hover {
+    background-color: #0056b3;
+}
+
+/* Section 5: Social Media Links */
+#social-media .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+}
+
+.social-links a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #0056b3;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #007bff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Logo Styling */
+header .logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+    border-radius: 50%;
+}
+
+/* Button Styling for Add Order */
+header .add-order-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+header .add-order-btn:hover {
+    background-color: #218838;
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 600px) {
+    header {
+        height: 60px;
+        padding: 0 10px;
+    }
+
+    header .logo img {
+        height: 40px;
+    }
+
+    header .add-order-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* General adjustments for readability */
+section h1,
+section p {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    padding: 20px; /* Padding for text */
+    border-radius: 10px; /* Rounded corners for better aesthetics */
+}
